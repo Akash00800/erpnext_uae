@@ -1,0 +1,15 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "erpnext_uae"
+authors = [
+    {name = "Frappe Technologies Pvt Ltd", email = "hello@frappe.io"}
+]
+description = "Frappe app built on top of ERPNext to hold regional settings for United Arab Emirates"
+requires-python = ">=3.10"
+dynamic = ["version"]
+
+[tool.flit.module]
+name = "erpnext_uae"

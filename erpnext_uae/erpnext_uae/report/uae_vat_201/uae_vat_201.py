@@ -166,7 +166,7 @@ def get_reverse_charge_total(filters):
 	try:
 		return frappe.db.get_all('Purchase Invoice',
 			filters = query_filters,
-			fields = ['sum(total)'],
+			fields = [{'SUM': 'total'}],
 			as_list=True,
 			limit = 1
 		)[0][0] or 0
@@ -198,7 +198,7 @@ def get_reverse_charge_recoverable_total(filters):
 	try:
 		return frappe.db.get_all('Purchase Invoice',
 			filters = query_filters,
-			fields = ['sum(total)'],
+			fields = [{'SUM': 'total'}],
 			as_list=True,
 			limit = 1
 		)[0][0] or 0
@@ -242,7 +242,7 @@ def get_standard_rated_expenses_total(filters):
 	try:
 		return frappe.db.get_all('Purchase Invoice',
 			filters = query_filters,
-			fields = ['sum(total)'],
+			fields = [{'SUM': 'total'}],
 			as_list=True,
 			limit = 1
 		)[0][0]  or 0
@@ -272,7 +272,7 @@ def get_tourist_tax_return_total(filters):
 	try:
 		return frappe.db.get_all('Sales Invoice',
 			filters = query_filters,
-			fields = ['sum(total)'],
+			fields = [{'SUM': 'total'}],
 			as_list=True,
 			limit = 1
 		)[0][0]  or 0
@@ -287,7 +287,7 @@ def get_tourist_tax_return_tax(filters):
 	try:
 		return frappe.db.get_all('Sales Invoice',
 			filters = query_filters,
-			fields = ['sum(tourist_tax_return)'],
+			fields = [{'SUM': 'tourist_tax_return'}],
 			as_list=True,
 			limit = 1
 		)[0][0]  or 0
